@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Catálogo Online</title>
+    <!-- Carrega o Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define a fonte Inter como padrão para todo o corpo do documento */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilos para o modal de detalhes do produto */
+        .modal-overlay {
+            /* Fundo escuro semi-transparente que cobre toda a tela */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Garante que o modal fique por cima de todo o conteúdo */
+            z-index: 999;
+        }
+        .modal-content {
+            /* Estilo para a caixa do modal */
+            max-height: 90vh; /* Limita a altura para caber na tela */
+            overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Cabeçalho do Catálogo -->
+    <header class="bg-white shadow-md py-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-blue-600">Meu Catálogo de Produtos</h1>
+            <!-- Botão de Contato no Cabeçalho -->
+            <a href="https://wa.me/5547988608860?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos." target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                Fale Conosco
+            </a>
+        </div>
+    </header>
+
+    <!-- Seção Principal do Catálogo -->
+    <main class="container mx-auto px-4 py-8">
+        <p class="text-center text-lg mb-8">Confira nossa seleção de produtos incríveis!</p>
+
+        <!-- Grade de Produtos -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Produtos atualizados com suas fotos e informações -->
+
+            <!-- Produto: JUICE BLVK NICSALT BAR ICE 35MG -->
+            <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105"
+                 data-name="JUICE BLVK NICSALT BAR ICE 35MG"
+                 data-description="Líquido BLVK Nicsalt Bar Ice 35mg, ideal para uma experiência de vaping suave e refrescante. Disponível em diversos sabores com toque gelado."
+                 data-price="R$ 89,90"
+                 data-stock="Disponível"
+                 data-variations="Sabores: Grape Soda Ice, Apple Grape Ice"
+                 data-image="imagens/JUICE BLVK NICSALT BAR ICE 35MG.jpg">
+                <img src="imagens/JUICE BLVK NICSALT BAR ICE 35MG.jpg" alt="JUICE BLVK NICSALT BAR ICE 35MG" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">JUICE BLVK NICSALT BAR ICE 35MG</h2>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Líquido BLVK Nicsalt Bar Ice 35mg, ideal para uma experiência de vaping suave e refrescante...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-lg">R$ 89,90</span>
+                        <span class="text-gray-500 text-xs">Estoque: Disponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: JUICE ZOMO DROPS SERIES 30ML -->
+            <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105"
+                 data-name="JUICE ZOMO DROPS SERIES 30ML"
+                 data-description="Líquido Zomo Drops Series 30ml, com sabores intensos e marcantes para seu vape. Experimente a linha completa!"
+                 data-price="R$ 79,90"
+                 data-stock="Disponível"
+                 data-variations="Sabores: Watermelon Ice, Grape Style"
+                 data-image="imagens/JUICE ZOMO DROPS SERIES 30ML.jpg">
+                <img src="imagens/JUICE ZOMO DROPS SERIES 30ML.jpg" alt="JUICE ZOMO DROPS SERIES 30ML" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">JUICE ZOMO DROPS SERIES 30ML</h2>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Líquido Zomo Drops Series 30ml, com sabores intensos e marcantes...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-lg">R$ 79,90</span>
+                        <span class="text-gray-500 text-xs">Estoque: Disponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: POD ELFBAR BC 15K PUFFS -->
+            <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105"
+                 data-name="POD ELFBAR BC 15K PUFFS"
+                 data-description="Pod descartável Elfbar BC 15K Puffs, com longa duração e sabores variados. Perfeito para quem busca praticidade e desempenho."
+                 data-price="R$ 149,90"
+                 data-stock="Disponível"
+                 data-variations="Sabores: Watermelon Ice, ELF Love"
+                 data-image="imagens/POD ELFBAR BC 15K PUFFS.jpg">
+                <img src="imagens/POD ELFBAR BC 15K PUFFS.jpg" alt="POD ELFBAR BC 15K PUFFS" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">POD ELFBAR BC 15K PUFFS</h2>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Pod descartável Elfbar BC 15K Puffs, com longa duração e sabores variados...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-lg">R$ 149,90</span>
+                        <span class="text-gray-500 text-xs">Estoque: Disponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: POD ELFBAR GH23K PUFFS -->
+            <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105"
+                 data-name="POD ELFBAR GH23K PUFFS"
+                 data-description="Pod descartável Elfbar GH23K Puffs, com impressionante capacidade e tecnologia avançada para uma experiência de vaping superior."
+                 data-price="R$ 189,90"
+                 data-stock="Disponível"
+                 data-variations="Sabores: Blue Razz Ice, Lime Grapefruit Ice"
+                 data-image="imagens/POD ELFBAR GH23K PUFFS.jpg">
+                <img src="imagens/POD ELFBAR GH23K PUFFS.jpg" alt="POD ELFBAR GH23K PUFFS" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">POD ELFBAR GH23K PUFFS</h2>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Pod descartável Elfbar GH23K Puffs, com impressionante capacidade...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-lg">R$ 189,90</span>
+                        <span class="text-gray-500 text-xs">Estoque: Disponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: POD ELFBAR TE 30K PUFFS -->
+            <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105"
+                 data-name="POD ELFBAR TE 30K PUFFS"
+                 data-description="Pod descartável Elfbar TE 30K Puffs, o máximo em duração e sabor. Design elegante e performance que surpreende."
+                 data-price="R$ 219,90"
+                 data-stock="Disponível"
+                 data-variations="Sabores: Acai Banana Ice, Miami Mint"
+                 data-image="imagens/POD ELFBAR TE 30K PUFFS.jpg">
+                <img src="imagens/POD ELFBAR TE 30K PUFFS.jpg" alt="POD ELFBAR TE 30K PUFFS" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">POD ELFBAR TE 30K PUFFS</h2>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Pod descartável Elfbar TE 30K Puffs, o máximo em duração e sabor...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-lg">R$ 219,90</span>
+                        <span class="text-gray-500 text-xs">Estoque: Disponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: POD IGNITE BLACK EDITION 8K PUFF -->
+            <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105"
+                 data-name="POD IGNITE BLACK EDITION 8K PUFF"
+                 data-description="Pod descartável Ignite Black Edition 8K Puffs, com design sofisticado e sabores intensos para uma experiência premium."
+                 data-price="R$ 119,90"
+                 data-stock="Disponível"
+                 data-variations="Sabores: Icy Mint, Banana Ice"
+                 data-image="imagens/POD IGNITE BLACK EDITION 8K PUFF.jpg">
+                <img src="imagens/POD IGNITE BLACK EDITION 8K PUFF.jpg" alt="POD IGNITE BLACK EDITION 8K PUFF" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">POD IGNITE BLACK EDITION 8K PUFF</h2>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Pod descartável Ignite Black Edition 8K Puffs, com design sofisticado...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-lg">R$ 119,90</span>
+                        <span class="text-gray-500 text-xs">Estoque: Disponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: POD IGNITE V250 25K PUFF -->
+            <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105"
+                 data-name="POD IGNITE V250 25K PUFF"
+                 data-description="Pod descartável Ignite V250 25K Puffs, uma nova geração com maior capacidade e tecnologia aprimorada para seu prazer."
+                 data-price="R$ 199,90"
+                 data-stock="Disponível"
+                 data-variations="Sabores: Icy Mint, Strawberry Banana"
+                 data-image="imagens/POD IGNITE V250 25K PUFF.jpg">
+                <img src="imagens/POD IGNITE V250 25K PUFF.jpg" alt="POD IGNITE V250 25K PUFF" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">POD IGNITE V250 25K PUFF</h2>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Pod descartável Ignite V250 25K Puffs, uma nova geração com maior capacidade...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-lg">R$ 199,90</span>
+                        <span class="text-gray-500 text-xs">Estoque: Disponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: POD IGNITE V300 30K PUFFS -->
+            <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105"
+                 data-name="POD IGNITE V300 30K PUFFS"
+                 data-description="Pod descartável Ignite V300 30K Puffs, o auge da linha Ignite com máxima duração e sabores que cativam. Viva a experiência!"
+                 data-price="R$ 229,90"
+                 data-stock="Disponível"
+                 data-variations="Sabores: Aloe Grape Ice, Menthol"
+                 data-image="imagens/POD IGNITE V300 30K PUFFS.jpg">
+                <img src="imagens/POD IGNITE V300 30K PUFFS.jpg" alt="POD IGNITE V300 30K PUFFS" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">POD IGNITE V300 30K PUFFS</h2>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Pod descartável Ignite V300 30K Puffs, o auge da linha Ignite com máxima duração...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-lg">R$ 229,90</span>
+                        <span class="text-gray-500 text-xs">Estoque: Disponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: POD MAXBAR 20K PUFFS -->
+            <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105"
+                 data-name="POD MAXBAR 20K PUFFS"
+                 data-description="Pod descartável Maxbar 20K Puffs, com sistema de refil e dois sabores em um só aparelho. Inovação e conveniência para seu dia a dia."
+                 data-price="R$ 179,90"
+                 data-stock="Disponível"
+                 data-variations="Sabores: Watermelon Bubblegum Mint + Peach Grape Ice; Grape Ice + Watermelon Ice"
+                 data-image="imagens/POD MAXBAR 20K PUFFS.jpg">
+                <img src="imagens/POD MAXBAR 20K PUFFS.jpg" alt="POD MAXBAR 20K PUFFS" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">POD MAXBAR 20K PUFFS</h2>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Pod descartável Maxbar 20K Puffs, com sistema de refil e dois sabores...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-lg">R$ 179,90</span>
+                        <span class="text-gray-500 text-xs">Estoque: Disponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: POD SEX ADDICT 28K PUFFS -->
+            <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105"
+                 data-name="POD SEX ADDICT 28K PUFFS"
+                 data-description="Pod descartável Sex Addict 28K Puffs, com uma explosão de sabor e longa duração para os mais exigentes vapers."
+                 data-price="R$ 209,90"
+                 data-stock="Disponível"
+                 data-variations="Sabores: Pineapple Ice, Banana Ice"
+                 data-image="imagens/POD SEX ADDICT 28K PUFFS.jpg">
+                <img src="imagens/POD SEX ADDICT 28K PUFFS.jpg" alt="POD SEX ADDICT 28K PUFFS" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">POD SEX ADDICT 28K PUFFS</h2>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Pod descartável Sex Addict 28K Puffs, com uma explosão de sabor...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-lg">R$ 209,90</span>
+                        <span class="text-gray-500 text-xs">Estoque: Disponível</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Seção de Contato no Rodapé da Página -->
+        <div class="text-center mt-12 p-6 bg-white rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Tem alguma dúvida ou quer fazer um pedido?</h2>
+            <p class="text-gray-700 mb-6">Entre em contato conosco pelo WhatsApp. Será um prazer atendê-lo(a)!</p>
+            <a href="https://wa.me/5547988608860?text=Olá,%20gostaria%20de%20fazer%20um%20pedido%20ou%20tirar%20uma%20dúvida." target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg text-lg transition duration-300 ease-in-out">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="inline-block w-6 h-6 mr-2">
+                Fale Conosco no WhatsApp
+            </a>
+        </div>
+    </main>
+
+    <!-- Modal de Detalhes do Produto (Inicialmente oculto) -->
+    <div id="product-modal" class="fixed inset-0 flex items-center justify-center z-50 hidden modal-overlay">
+        <div class="modal-content bg-white rounded-lg shadow-xl p-6 w-11/12 md:w-2/3 lg:w-1/2 relative">
+            <!-- Botão para fechar o modal -->
+            <button id="close-modal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+            <div class="flex flex-col md:flex-row gap-6">
+                <img id="modal-image" src="" alt="Imagem do Produto" class="w-full md:w-1/2 h-64 object-cover rounded-lg">
+                <div class="md:w-1/2">
+                    <h2 id="modal-name" class="text-2xl font-bold text-gray-900 mb-2"></h2>
+                    <p id="modal-price" class="text-blue-600 font-bold text-xl mb-3"></p>
+                    <p id="modal-description" class="text-gray-700 mb-4"></p>
+                    <p id="modal-stock" class="text-gray-600 text-sm mb-2"></p>
+                    <p id="modal-variations" class="text-gray-600 text-sm mb-4"></p>
+                    <!-- Botão de contato via WhatsApp no modal -->
+                    <a id="modal-whatsapp-button" href="#" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-full shadow-md text-sm transition duration-300 ease-in-out">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="inline-block w-5 h-5 mr-1">
+                        Pedir via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para lidar com a abertura e fechamento do modal de detalhes do produto
+
+        // Seleciona todos os cards de produto
+        const productCards = document.querySelectorAll('.product-card');
+        // Seleciona o modal e seus elementos internos
+        const productModal = document.getElementById('product-modal');
+        const closeModalButton = document.getElementById('close-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalName = document.getElementById('modal-name');
+        const modalPrice = document.getElementById('modal-price');
+        const modalDescription = document.getElementById('modal-description');
+        const modalStock = document.getElementById('modal-stock');
+        const modalVariations = document.getElementById('modal-variations');
+        const modalWhatsappButton = document.getElementById('modal-whatsapp-button');
+
+        // Adiciona um evento de clique a cada card de produto
+        productCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Obtém os dados do produto a partir dos atributos 'data-' do card
+                const name = card.dataset.name;
+                const description = card.dataset.description;
+                const price = card.dataset.price;
+                const stock = card.dataset.stock;
+                const variations = card.dataset.variations;
+                const image = card.dataset.image;
+
+                // Preenche o modal com os dados do produto clicado
+                modalImage.src = image;
+                modalImage.alt = name;
+                modalName.textContent = name;
+                modalPrice.textContent = price;
+                modalDescription.textContent = description;
+                modalStock.textContent = `Estoque: ${stock}`;
+                modalVariations.textContent = variations;
+
+                // Monta a mensagem do WhatsApp com o nome do produto
+                const whatsappMessage = `Olá, tenho interesse no produto: ${name}.`;
+                // Atualiza o link do WhatsApp com o número fornecido
+                modalWhatsappButton.href = `https://wa.me/5547988608860?text=${encodeURIComponent(whatsappMessage)}`;
+
+                // Exibe o modal
+                productModal.classList.remove('hidden');
+            });
+        });
+
+        // Adiciona evento de clique para fechar o modal
+        closeModalButton.addEventListener('click', () => {
+            productModal.classList.add('hidden');
+        });
+
+        // Fecha o modal se clicar fora do conteúdo do modal
+        productModal.addEventListener('click', (event) => {
+            if (event.target === productModal) {
+                productModal.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
